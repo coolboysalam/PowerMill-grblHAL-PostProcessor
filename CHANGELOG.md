@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Initial public project structure.
 - Autodesk PowerMill 2026 grblHAL post processor project.
+- Published the current reference post as `postprocessor/Voron_Cascade_grblHAL.pmoptz`.
 - 3-axis XYZ milling output.
 - Metric units and absolute positioning.
 - Incremental IJK arc-center handling.
@@ -19,7 +20,8 @@ All notable changes to this project will be documented in this file.
 - G54 work offset output.
 - Program start and end safety states.
 - English and Persian documentation.
-- Example milling NC output.
+- Representative milling NC output excerpt for review.
+- `.gitattributes` rule marking `.pmoptz` files as binary.
 
 ### In progress
 
@@ -33,3 +35,4 @@ All notable changes to this project will be documented in this file.
 
 - Fanuc-specific G05 high-speed logic has been removed.
 - Hard-coded G53 Z0 retract behavior has been removed from the generic post.
+- The repository example is intentionally an excerpt and is not intended for direct machine execution.
