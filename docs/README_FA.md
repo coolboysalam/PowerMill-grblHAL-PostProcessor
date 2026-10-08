@@ -5,11 +5,15 @@
 این پروژه یک Post Processor سفارشی برای **Autodesk PowerMill** است که برای دستگاه‌های CNC سه‌محوره مبتنی بر **grblHAL** توسعه داده شده است. نسخه اولیه روی **Voron Cascade CNC** با کنترلر **BTT Scylla V1 / STM32H723** ساخته و تست شده است.
 
 > وضعیت: **Alpha / در حال توسعه فعال**  
-> نسخه اولیه: **v0.1.0-alpha**  
+> نسخه مرجع فعلی: **v0.1.0-alpha**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > کنترلر: grblHAL  
 > واحد: Metric
+
+فایل مرجع فعلی پروژه:
+
+[`postprocessor/Voron_Cascade_grblHAL.pmoptz`](../postprocessor/Voron_Cascade_grblHAL.pmoptz)
 
 ## محدوده فعلی پروژه
 
@@ -62,17 +66,19 @@
 - تغییر Feed
 - Tool Change
 - فرمان‌های Spindle
-- Work Offset با G54
+- Work Offset با `G54`
 - Program Start / End
 
-نمونه خروجی در فایل زیر قرار دارد:
+یک نمونه کوتاه از خروجی واقعی تولیدشده در این فایل قرار دارد:
 
-[`examples/milling-test.tap`](../examples/milling-test.tap)
+[`examples/milling-test-excerpt.tap`](../examples/milling-test-excerpt.tap)
+
+> این فایل فقط برای بررسی و مستندسازی است و **برای اجرای مستقیم روی دستگاه در نظر گرفته نشده است**.
 
 ## فایل‌ها
 
-- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — فایل اصلی Post Processor
-- `examples/milling-test.tap` — نمونه NC تولیدشده
+- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — فایل مرجع فعلی Post Processor
+- `examples/milling-test-excerpt.tap` — بخشی از خروجی NC واقعی برای بررسی
 - `docs/README_FA.md` — مستندات فارسی
 - `docs/COMPATIBILITY.md` — وضعیت سازگاری و نکات فنی
 - `CHANGELOG.md` — تاریخچه تغییرات
