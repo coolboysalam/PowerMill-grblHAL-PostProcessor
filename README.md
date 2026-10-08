@@ -4,20 +4,20 @@
 
 A custom Autodesk PowerMill post processor for **grblHAL-based 3-axis CNC machines**, initially developed and tested for the **Voron Cascade CNC** using a **BTT Scylla V1 / STM32H723** controller.
 
-> Status: **Alpha / active development**  
-> Current reference version: **v0.1.0-alpha**  
+> Status: **Stable / main release**  
+> Current release: **v1.0.0**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > Controller: grblHAL  
 > Units: Metric
 
-The current project reference post is:
+The current project release post is:
 
 [`postprocessor/Voron_Cascade_grblHAL.pmoptz`](postprocessor/Voron_Cascade_grblHAL.pmoptz)
 
 ## Current scope
 
-The current post is focused on conventional 3-axis milling and safe, readable grblHAL output.
+Version 1.0.0 is the first stable release for conventional 3-axis milling with grblHAL. Features listed as under validation are not part of the stable support scope yet.
 
 ### Implemented and tested
 
@@ -44,7 +44,7 @@ The current post is focused on conventional 3-axis milling and safe, readable gr
 - NC comments
 - Tool and toolpath information comments
 
-### Under validation / development
+### Under validation / planned
 
 - `G73` chip-break drilling
 - `G83` deep drilling
@@ -77,7 +77,7 @@ A representative excerpt of that generated output is available here:
 
 ## Files
 
-- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — current PowerMill option file
+- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — current stable PowerMill option file
 - `examples/milling-test-excerpt.tap` — representative excerpt of generated NC output
 - `docs/README_FA.md` — Persian documentation
 - `docs/COMPATIBILITY.md` — compatibility and implementation notes
@@ -93,7 +93,7 @@ A representative excerpt of that generated output is available here:
 
 ## Safety
 
-This post processor is under active development.
+Version 1.0.0 is the stable release for the documented 3-axis milling scope. Features listed under **Under validation / planned** should still be treated as experimental until they are explicitly promoted to supported status.
 
 Always verify:
 
