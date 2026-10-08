@@ -5,11 +5,15 @@
 A custom Autodesk PowerMill post processor for **grblHAL-based 3-axis CNC machines**, initially developed and tested for the **Voron Cascade CNC** using a **BTT Scylla V1 / STM32H723** controller.
 
 > Status: **Alpha / active development**  
-> Initial version: **v0.1.0-alpha**  
+> Current reference version: **v0.1.0-alpha**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > Controller: grblHAL  
 > Units: Metric
+
+The current project reference post is:
+
+[`postprocessor/Voron_Cascade_grblHAL.pmoptz`](postprocessor/Voron_Cascade_grblHAL.pmoptz)
 
 ## Current scope
 
@@ -65,12 +69,16 @@ A real PowerMill milling toolpath has been post-processed successfully with seve
 - G54 work offset
 - Program start / end sequences
 
-An example output is provided in [`examples/milling-test.tap`](examples/milling-test.tap).
+A representative excerpt of that generated output is available here:
+
+[`examples/milling-test-excerpt.tap`](examples/milling-test-excerpt.tap)
+
+> The example file is an excerpt for review and documentation only. It is **not intended for direct machine execution**.
 
 ## Files
 
-- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — PowerMill option file
-- `examples/milling-test.tap` — example generated NC program
+- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — current PowerMill option file
+- `examples/milling-test-excerpt.tap` — representative excerpt of generated NC output
 - `docs/README_FA.md` — Persian documentation
 - `docs/COMPATIBILITY.md` — compatibility and implementation notes
 - `CHANGELOG.md` — project changes
