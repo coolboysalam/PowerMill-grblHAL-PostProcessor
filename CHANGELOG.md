@@ -2,13 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0-alpha] - 2026-10-08
+## [1.0.0] - 2026-10-08
 
 ### Added
 
-- Initial public project structure.
+- First stable public release.
 - Autodesk PowerMill 2026 grblHAL post processor project.
-- Published the current reference post as `postprocessor/Voron_Cascade_grblHAL.pmoptz`.
+- Published the current stable post as `postprocessor/Voron_Cascade_grblHAL.pmoptz`.
 - 3-axis XYZ milling output.
 - Metric units and absolute positioning.
 - Incremental IJK arc-center handling.
@@ -23,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - Representative milling NC output excerpt for review.
 - `.gitattributes` rule marking `.pmoptz` files as binary.
 
-### In progress
+### Not included in the stable support scope yet
 
 - G73 chip-break drilling validation.
 - G83 deep-drilling validation.
