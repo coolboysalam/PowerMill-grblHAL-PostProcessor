@@ -4,20 +4,20 @@
 
 این پروژه یک Post Processor سفارشی برای **Autodesk PowerMill** است که برای دستگاه‌های CNC سه‌محوره مبتنی بر **grblHAL** توسعه داده شده است. نسخه اولیه روی **Voron Cascade CNC** با کنترلر **BTT Scylla V1 / STM32H723** ساخته و تست شده است.
 
-> وضعیت: **Alpha / در حال توسعه فعال**  
-> نسخه مرجع فعلی: **v0.1.0-alpha**  
+> وضعیت: **نسخه پایدار / اصلی**  
+> نسخه فعلی: **v1.0.0**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > کنترلر: grblHAL  
 > واحد: Metric
 
-فایل مرجع فعلی پروژه:
+فایل اصلی نسخه فعلی پروژه:
 
 [`postprocessor/Voron_Cascade_grblHAL.pmoptz`](../postprocessor/Voron_Cascade_grblHAL.pmoptz)
 
-## محدوده فعلی پروژه
+## محدوده نسخه 1.0.0
 
-تمرکز نسخه فعلی روی ماشین‌کاری سه‌محوره معمولی و تولید خروجی خوانا و ایمن برای grblHAL است.
+نسخه 1.0.0 اولین نسخه پایدار برای ماشین‌کاری معمول سه‌محوره با grblHAL است. قابلیت‌هایی که در بخش «در حال اعتبارسنجی / برنامه‌ریزی‌شده» آمده‌اند هنوز جزو پشتیبانی پایدار این نسخه محسوب نمی‌شوند.
 
 ### قابلیت‌های پیاده‌سازی و تست‌شده
 
@@ -44,7 +44,7 @@
 - NC Comments
 - Comment اطلاعات Tool و Toolpath
 
-### در حال توسعه / اعتبارسنجی
+### در حال اعتبارسنجی / برنامه‌ریزی‌شده
 
 - سوراخ‌کاری Chip Break با `G73`
 - Deep Drilling با `G83`
@@ -77,7 +77,7 @@
 
 ## فایل‌ها
 
-- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — فایل مرجع فعلی Post Processor
+- `postprocessor/Voron_Cascade_grblHAL.pmoptz` — فایل اصلی و پایدار Post Processor
 - `examples/milling-test-excerpt.tap` — بخشی از خروجی NC واقعی برای بررسی
 - `docs/README_FA.md` — مستندات فارسی
 - `docs/COMPATIBILITY.md` — وضعیت سازگاری و نکات فنی
@@ -93,7 +93,7 @@
 
 ## نکات ایمنی
 
-این Post Processor هنوز در حال توسعه است.
+نسخه 1.0.0 نسخه پایدار برای محدوده مستندشده ماشین‌کاری سه‌محوره است. قابلیت‌هایی که در بخش **در حال اعتبارسنجی / برنامه‌ریزی‌شده** قرار دارند تا زمان اعلام رسمی، آزمایشی در نظر گرفته می‌شوند.
 
 قبل از هر اجرا موارد زیر را کنترل کنید:
 
