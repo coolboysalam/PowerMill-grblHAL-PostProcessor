@@ -38,7 +38,7 @@ Initial validation hardware:
 | Manual tool change | M6 | Tested |
 | Program end | M30 | Tested |
 | Standard drilling | G81 | Configured / validation ongoing |
-| Chip-break drilling | G73 | Work in progress |
+| Chip-break drilling | G73 | Check Mode passed; operator-confirmed machine test (2026-10-12) |
 | Deep drilling | G83 | Work in progress |
 | Tapping | G84 | Not enabled |
 | Rigid tapping | G84 | Not enabled |
@@ -65,7 +65,9 @@ Hard-coded machine-coordinate retracts such as `G53 Z0` are intentionally not em
 
 `G81` is the conservative baseline cycle.
 
-`G73` and `G83` are being validated to ensure PowerMill maps peck depth correctly to the grblHAL `Q` word.
+`G73` was validated on 2026-10-12: `Q` is made positive with `abs(%p(Drilling Peck Depth)%)` and emitted at every cycle setup, including after `G80`. The `P` dwell word is omitted from G73 to avoid error:36 on the tested controller. A complete program passed Check Mode and the operator confirmed successful machine execution.
+
+`G83` remains under validation. This change does not establish support for other drilling or tapping cycles.
 
 Tapping is currently disabled until spindle synchronization and controller behavior are validated on the target machine.
 

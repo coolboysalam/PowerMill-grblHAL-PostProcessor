@@ -5,7 +5,7 @@
 این پروژه یک Post Processor سفارشی برای **Autodesk PowerMill** است که برای دستگاه‌های CNC سه‌محوره مبتنی بر **grblHAL** توسعه داده شده است. نسخه اولیه روی **Voron Cascade CNC** با کنترلر **BTT Scylla V1 / STM32H723** ساخته و تست شده است.
 
 > وضعیت: **نسخه پایدار / اصلی**  
-> نسخه فعلی: **v1.0.0**  
+> بازبینی فعلی پست: **۲۰۲۶-۱۰-۱۲**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > کنترلر: grblHAL  
@@ -20,6 +20,8 @@
 نسخه 1.0.0 اولین نسخه پایدار برای ماشین‌کاری معمول سه‌محوره با grblHAL است. قابلیت‌هایی که در بخش «در حال اعتبارسنجی / برنامه‌ریزی‌شده» آمده‌اند هنوز جزو پشتیبانی پایدار این نسخه محسوب نمی‌شوند.
 
 ### قابلیت‌های پیاده‌سازی و تست‌شده
+
+- سوراخ‌کاری Chip Break با `G73`، خروجی مثبت و همیشگی `Q` در شروع سیکل و حذف `P`
 
 - ماشین‌کاری سه‌محوره XYZ
 - واحد متریک
@@ -46,13 +48,17 @@
 
 ### در حال اعتبارسنجی / برنامه‌ریزی‌شده
 
-- سوراخ‌کاری Chip Break با `G73`
 - Deep Drilling با `G83`
-- انتقال صحیح Peck Depth به پارامتر `Q`
 - Probing
 - Tapping / Rigid Tapping
 - Safe Retract و Tool Change Position اختصاصی ماشین
 - استراتژی Coolant و خروجی‌های Auxiliary
+
+## اصلاح سوراخ‌کاری — ۲۰۲۶-۱۰-۱۲
+
+در Break Chip Setup، مقدار Drilling Peck Depth با عبارت `abs(%p(Drilling Peck Depth)%)` و تنظیم **Output to Tape = Always** خروجی داده می‌شود. برای Drilling Dwell در G73، تنظیم **Output to Tape = Never** اعمال شده است. این تغییرات مقدار منفی Q، حذف Q پس از G80 و خطای error:36 ناشی از پارامتر اضافی P را برطرف می‌کنند.
+
+برنامه کامل سوراخ‌کاری در Check Mode کنترلر grblHAL بدون خطا بررسی شد. اپراتور اجرای موفق روی Voron Cascade را نیز تأیید کرد. این تست مربوط به G73 است؛ G83 و سایر سیکل‌ها همچنان در حال اعتبارسنجی هستند.
 
 ## تست انجام‌شده
 

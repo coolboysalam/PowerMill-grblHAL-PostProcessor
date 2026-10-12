@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2026-10-12 — G73 drilling fix
+
+### Fixed
+
+- Output positive G73 Q peck depth using `abs(%p(Drilling Peck Depth)%)`.
+- Set Q output to Always so each cycle setup includes Q after G80.
+- Suppress the G73 P dwell word, resolving error:36 on the tested grblHAL controller.
+- Replace the post with the operator-designated final file, uploaded as Voron_Cascade_grblHAL(3).pmoptz.
+
+### Validation
+
+- Complete drilling program passed grblHAL Check Mode without errors.
+- Operator confirmed successful drilling on Voron Cascade.
+- G83 remains under validation.
+
+### فارسی
+
+- اصلاح مقدار منفی Q با تابع abs و خروجی همیشگی آن در شروع هر سیکل G73، از جمله پس از G80.
+- حذف پارامتر P از G73 برای رفع خطای 36 در کنترلر تست‌شده.
+- بررسی کامل بدون خطا در Check Mode و تأیید اجرای موفق سوراخ‌کاری توسط اپراتور روی Voron Cascade.
+- G83 همچنان در حال اعتبارسنجی است.
+
 ## [1.0.0] - 2026-10-08
 
 ### Added

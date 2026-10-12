@@ -5,7 +5,7 @@
 A custom Autodesk PowerMill post processor for **grblHAL-based 3-axis CNC machines**, initially developed and tested for the **Voron Cascade CNC** using a **BTT Scylla V1 / STM32H723** controller.
 
 > Status: **Stable / main release**  
-> Current release: **v1.0.0**  
+> Current post revision: **2026-10-12**  
 > PowerMill: Autodesk PowerMill Ultimate 2026  
 > Post Utility: Autodesk Manufacturing Post Processor Utility 2026  
 > Controller: grblHAL  
@@ -17,9 +17,11 @@ The current project release post is:
 
 ## Current scope
 
-Version 1.0.0 is the first stable release for conventional 3-axis milling with grblHAL. Features listed as under validation are not part of the stable support scope yet.
+The current post supports conventional 3-axis milling and G73 chip-break drilling tested on the development machine. Features listed as under validation are not part of the stable support scope yet.
 
 ### Implemented and tested
+
+- `G73` chip-break drilling: positive `Q`, emitted at every cycle setup, with no `P` word
 
 - 3-axis XYZ milling
 - Metric units
@@ -46,13 +48,17 @@ Version 1.0.0 is the first stable release for conventional 3-axis milling with g
 
 ### Under validation / planned
 
-- `G73` chip-break drilling
 - `G83` deep drilling
-- Correct `Q` peck-depth mapping from PowerMill
 - Probing workflows
 - Tapping / rigid tapping
 - Machine-specific safe retract and tool-change positioning
 - Coolant / auxiliary output strategies
+
+## Drilling update — 2026-10-12
+
+In Break Chip Setup, `Drilling Peck Depth` uses `abs(%p(Drilling Peck Depth)%)` and **Output to Tape = Always**. `Drilling Dwell` uses **Output to Tape = Never** for G73. This fixes negative Q values, missing Q after G80, and error:36 caused by the unused P word.
+
+A complete drilling program passed grblHAL Check Mode without errors. The operator also confirmed successful execution on Voron Cascade. This validation covers G73; G83 and other drilling cycles remain under validation.
 
 ## Tested output
 
